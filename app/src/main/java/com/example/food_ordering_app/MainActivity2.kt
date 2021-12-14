@@ -38,7 +38,7 @@ class MainActivity2 : AppCompatActivity() {
                 }
                 withContext(Dispatchers.Main){
                     val recycle=findViewById<RecyclerView>(R.id.recycle)
-                    recycle.adapter=AdapterClass(items)
+                    recycle.adapter=AdapterClass(items,this@MainActivity2)
                     recycle.layoutManager= LinearLayoutManager(this@MainActivity2)
                 }
 

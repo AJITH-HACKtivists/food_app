@@ -1,14 +1,20 @@
 package com.example.food_ordering_app
 
+import android.content.Context
+import android.content.Intent
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 
-class AdapterClass(var songs:MutableList<FooditemData>):RecyclerView.Adapter<AdapterClass.ViewHolder>() {
+class AdapterClass(var songs:MutableList<FooditemData>,var context:Context):RecyclerView.Adapter<AdapterClass.ViewHolder>() {
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val inflater:LayoutInflater= LayoutInflater.from(parent.context)
         val view=inflater.inflate(R.layout.items,parent,false)
@@ -25,9 +31,20 @@ class AdapterClass(var songs:MutableList<FooditemData>):RecyclerView.Adapter<Ada
     override fun getItemCount(): Int {
         return songs.size
     }
-    class ViewHolder(itemView:View):RecyclerView.ViewHolder(itemView){
+    inner class ViewHolder(itemView:View):RecyclerView.ViewHolder(itemView){
         val image=itemView.findViewById<ImageView>(R.id.image)
         val text1=itemView.findViewById<TextView>(R.id.text)
         val text2=itemView.findViewById<TextView>(R.id.text2)
+        var id:Int=0
+
+        init{
+            itemView.setOnClickListener{
+                id=adapterPosition
+                val intent=Intent(context,OrdersPage::class.java)
+                intent.putExtra("ID",songs[id].id)
+                startActivity(context,intent, Bundle())
+            }
+        }
+
     }
 }

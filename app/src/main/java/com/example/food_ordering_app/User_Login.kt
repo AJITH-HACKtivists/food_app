@@ -45,7 +45,8 @@ class User_Login : AppCompatActivity() {
 
             withContext(Dispatchers.Main) {
                 if(result.isSuccessful){
-                    sessionManager.saveAuthToken(result.body()?.token)
+                    sessionManager.saveAuthToken(result.body()!!.token)
+                    sessionManager.saveUserID(result.body()!!.email)
                     intent.putExtra("string",result.body()?.token)
                     startActivity(intent)
 
