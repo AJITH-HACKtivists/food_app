@@ -74,7 +74,7 @@ class ConfirmOrders : AppCompatActivity() {
                 var result=apiClient.apiService.PlaceOrders("Bearer "+token, Dishes(text,count))
                 withContext(Dispatchers.Main){
                     if(result!!.isSuccessful){
-                        //Toast.makeText(this@ConfirmOrders,"Order successfull",Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this@ConfirmOrders,"Order successfull",Toast.LENGTH_SHORT).show()
                     }
                 }
 

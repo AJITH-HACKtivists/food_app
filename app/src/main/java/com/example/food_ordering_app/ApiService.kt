@@ -12,5 +12,5 @@ interface ApiService {
    @GET("/eaterapp/dishes")
    suspend fun GetDishes(@Header("Authorization") token: String):Response<FooditemsList>
    @POST("/eaterapp/users/me/orders")
-   suspend fun PlaceOrders(@Header("Authorization") token: String,@Body request: Dishes):Response<Any>
+   suspend fun PlaceOrders(@Header("Authorization") token: String,@Body request: Dishes):Response<Unit>
 }
