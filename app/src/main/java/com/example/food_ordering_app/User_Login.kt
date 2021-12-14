@@ -41,7 +41,7 @@ class User_Login : AppCompatActivity() {
 
         button.setOnClickListener {
         CoroutineScope(Dispatchers.IO).launch {
-           var result=apiClient.apiService.login(LoginRequest("user3@gmail.com","password1"))
+           var result=apiClient.apiService.login(LoginRequest(email.editText?.text?.toString(), password.editText?.text?.toString()))
 
             withContext(Dispatchers.Main) {
                 if(result.isSuccessful){
@@ -52,7 +52,7 @@ class User_Login : AppCompatActivity() {
                     Toast.makeText(this@User_Login,"Login successfull",Toast.LENGTH_LONG)
                 }
                 else
-                    Toast.makeText(this@User_Login,"Login successfull",Toast.LENGTH_LONG)
+                    Toast.makeText(this@User_Login,"Invalid details",Toast.LENGTH_SHORT).show()
                }
         }
     }
