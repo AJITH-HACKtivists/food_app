@@ -1,5 +1,6 @@
 package com.example.food_ordering_app
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -11,19 +12,19 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import java.lang.Exception
 
 class ConfirmOrders : AppCompatActivity() {
     lateinit var session:SessionManager
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_confirm_orders)
-        val img=findViewById<ImageView>(R.id.image)
+        val img=findViewById<ImageView>(R.id.images)
         val qty=findViewById<TextView>(R.id.qty)
         val add=findViewById<Button>(R.id.add)
         val sub=findViewById<Button>(R.id.reduce)
         val pricce=findViewById<TextView>(R.id.itempricee)
         val create=findViewById<Button>(R.id.placeorder)
+        val myorders=findViewById<Button>(R.id.check)
         var text=intent.getIntExtra("Id",0)
         var prices:Int?=0
         var count=0
@@ -84,6 +85,9 @@ class ConfirmOrders : AppCompatActivity() {
              Toast.makeText(this@ConfirmOrders,"Please select number of items",Toast.LENGTH_SHORT).show()
          }
          }
-
+myorders.setOnClickListener{
+    var intent= Intent(this,MyOrders::class.java)
+    startActivity(intent)
+}
         }
     }

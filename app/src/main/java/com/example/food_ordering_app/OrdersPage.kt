@@ -21,6 +21,7 @@ class OrdersPage : AppCompatActivity() {
         val type=findViewById<TextView>(R.id.itemtype)
         val price=findViewById<TextView>(R.id.itemprice)
         val create=findViewById<Button>(R.id.Createorder)
+        val txt=findViewById<TextView>(R.id.layout)
         var text=intent.getIntExtra("ID",0)
         session= SessionManager(this)
         var token=session.fetchAuthToken()
@@ -42,6 +43,7 @@ class OrdersPage : AppCompatActivity() {
 
             }
             withContext(Dispatchers.Main){
+                txt.text=res2?.name
                 Picasso.get().load(res2?.url).into(img);
                 type.text=res2?.type
                 price.text="${res2?.price}"

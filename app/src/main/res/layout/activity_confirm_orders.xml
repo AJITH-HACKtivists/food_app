@@ -18,7 +18,7 @@
         app:layout_constraintTop_toBottomOf="@+id/itempricee" />
 
     <ImageView
-        android:id="@+id/image"
+        android:id="@+id/images"
         android:layout_width="273dp"
         android:layout_height="174dp"
         android:layout_marginTop="116dp"
@@ -47,7 +47,7 @@
         android:layout_marginTop="68dp"
         android:text="+"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/image" />
+        app:layout_constraintTop_toBottomOf="@+id/images" />
 
     <TextView
         android:id="@+id/qty"
@@ -57,7 +57,7 @@
         android:layout_marginTop="72dp"
         android:text="0"
         app:layout_constraintStart_toEndOf="@+id/add"
-        app:layout_constraintTop_toBottomOf="@+id/image" />
+        app:layout_constraintTop_toBottomOf="@+id/images" />
 
     <Button
         android:id="@+id/reduce"
@@ -67,7 +67,17 @@
         android:layout_marginTop="68dp"
         android:text="-"
         app:layout_constraintStart_toEndOf="@+id/qty"
-        app:layout_constraintTop_toBottomOf="@+id/image" />
+        app:layout_constraintTop_toBottomOf="@+id/images" />
+
+    <Button
+        android:id="@+id/check"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="19dp"
+        android:text="MyOrders"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/placeorder" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

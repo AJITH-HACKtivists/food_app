@@ -13,4 +13,8 @@ interface ApiService {
    suspend fun GetDishes(@Header("Authorization") token: String):Response<FooditemsList>
    @POST("/eaterapp/users/me/orders")
    suspend fun PlaceOrders(@Header("Authorization") token: String,@Body request: Dishes):Response<Unit>
+   @GET("/eaterapp/users/me/orders")
+   suspend fun fetchOrders(@Header("Authorization") token: String):Response<OrdersHistoryList>
+   @DELETE("/eaterapp/users/me/orders/{orderId}")
+   suspend fun DeleteOrders(@Header("Authorization") token: String,@Path("orderId")orderId:Int):Response<Unit>
 }

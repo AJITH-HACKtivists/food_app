@@ -15,11 +15,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Food_Ordering_App">
         <activity
-            android:name=".ConfirmOrders"
+            android:name=".deleteorders"
             android:exported="false" />
         <activity
-            android:name=".OrdersPage"
+            android:name=".MyOrders"
             android:exported="false" />
+        <activity
+            android:name=".ConfirmOrders"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
+        <activity
+            android:name=".OrdersPage"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
         <activity
             android:name=".User_Login"
             android:exported="false"

@@ -8,7 +8,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
 import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
@@ -32,7 +31,7 @@ class AdapterClass(var songs:MutableList<FooditemData>,var context:Context):Recy
         return songs.size
     }
     inner class ViewHolder(itemView:View):RecyclerView.ViewHolder(itemView){
-        val image=itemView.findViewById<ImageView>(R.id.image)
+        val image=itemView.findViewById<ImageView>(R.id.images)
         val text1=itemView.findViewById<TextView>(R.id.text)
         val text2=itemView.findViewById<TextView>(R.id.text2)
         var id:Int=0
